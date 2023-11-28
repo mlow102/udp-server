@@ -41,7 +41,7 @@ class TrackerManager:
     trackers = []
 
     def get_trackers(self):
-        return trackers
+        return self.trackers
 
     def poll_trackers(self):
         """This must be run in an infinite loop where this class is implemented!!!"""
