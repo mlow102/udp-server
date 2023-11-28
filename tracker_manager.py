@@ -113,7 +113,7 @@ class TrackerManager:
             return
 
         found = False
-        for tracker in trackers:
+        for tracker in self.trackers:
             if tracker.id == uid:
                 # Update the tracker
                 tracker.update_position(x[0], y[0], z[0], theta_x[0], theta_y[0], theta_z[0])
