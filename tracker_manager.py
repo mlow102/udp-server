@@ -4,9 +4,6 @@ import struct
 from coordinate import Coordinate
 import binascii
 
-trackers = []
-trackers.append(Coordinate(0, 0, 0, 0, 0, 0, 0))  # Add a dummy tracker to the list to avoid index out of bounds errors
-
 def calculate_checksum(data):
     """Use to validate recieved data"""
     #print("Calculating checksum for data: " + str(data))
@@ -34,13 +31,17 @@ def calculate_checksum(data):
         checksum += data_fields[key]
     return checksum    
     
-class Tracker:
+class TrackerManager:
     """A class to interface with a set of MoCAP Trackers"""
     # A list of all connected trackers
     UDP_IP = "0.0.0.0"  # Listen on all interfaces
     UDP_PORT = 3333  # Match the port used by the ESP32 client
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind((UDP_IP, UDP_PORT))
+    trackers = []
+
+    def get_trackers(self):
+        return trackers
 
     def poll_trackers(self):
         """This must be run in an infinite loop where this class is implemented!!!"""
@@ -121,6 +122,6 @@ class Tracker:
                 break
         if(found == False):
             # Create a new tracker
-            new_tracker = Coordinate(uid[0], x[0], y[0], z[0], theta_x[0], theta_y[0], theta_z[0])
+            new_tracker = Tracker(uid[0], x[0], y[0], z[0], theta_x[0], theta_y[0], theta_z[0])
             trackers.append(new_tracker)
             #print("New:     " + str(new_tracker))

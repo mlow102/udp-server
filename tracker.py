@@ -18,3 +18,6 @@ class Tracker:
         self.theta_x = theta_x
         self.theta_y = theta_y
         self.theta_z = theta_z
+
+    def get_position(self):
+        return {x, y, z, theta_x, theta_y, theta_z, id}
