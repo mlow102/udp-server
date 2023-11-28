@@ -123,5 +123,5 @@ class TrackerManager:
         if(found == False):
             # Create a new tracker
             new_tracker = Tracker(uid[0], x[0], y[0], z[0], theta_x[0], theta_y[0], theta_z[0])
-            trackers.append(new_tracker)
+            self.trackers.append(new_tracker)
             #print("New:     " + str(new_tracker))
