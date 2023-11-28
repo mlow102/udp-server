@@ -1,7 +1,7 @@
 import socket
 import time
 import struct
-from coordinate import Coordinate
+from Tracker import tracker
 import binascii
 
 def calculate_checksum(data):
