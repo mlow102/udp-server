@@ -7,7 +7,7 @@ def main():
         tracker_manager.poll_trackers()
         tracker_list = tracker_manager.get_trackers()
         for tracker in tracker_list:
-            print(tracker)
+            print("t_x: " + str(tracker.theta_x), end='\r', flush=True)
 
 if __name__ == '__main__':
     main()
