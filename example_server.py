@@ -8,7 +8,6 @@ def main():
         tracker_list = tracker_manager.get_trackers()
         for tracker in tracker_list:
             print(tracker)
-            print("x=" + tracker.get_position[0])
 
 if __name__ == '__main__':
     main()
