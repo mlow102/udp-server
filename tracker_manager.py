@@ -61,22 +61,22 @@ class TrackerManager:
         #Unpack x position only
         x_raw = data[2:4] + data[0:2]
         x = struct.unpack(format_string, x_raw)
-        print("Found x="  + str(x))
+        #print("Found x="  + str(x))
 
         #Unpack y position
         y_raw = data[6:8] + data[4:6]
         y = struct.unpack(format_string, y_raw)
-        print("Found y="  + str(y))
+        #print("Found y="  + str(y))
          
         #Unpack z position
         z_raw = data[10:12] + data[8:10]
         z = struct.unpack(format_string, z_raw)
-        print("Found z="  + str(z))
+        #print("Found z="  + str(z))
 
         #Unpack theta_x
         theta_x_raw = data[14:16] + data[12:14]
         theta_x = struct.unpack(format_string, theta_x_raw)
-        print("Found theta_x="  + str(theta_x))
+        #print("Found theta_x="  + str(theta_x))
 
         #Unpack theta_y
         theta_y_raw = data[18:20] + data[16:18]
